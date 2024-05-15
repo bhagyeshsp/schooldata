@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: %i[ show edit update destroy ]
+  before_action :set_teacher, only: [:new, :create]
+
 
   # GET /students or /students.json
   def index
@@ -11,8 +13,9 @@ class StudentsController < ApplicationController
   end
 
   # GET /students/new
-  def new
-    @student = Student.new
+  #Modified to add teacher's id
+  def new 
+    @student = @teacher.students.build
   end
 
   # GET /students/1/edit
@@ -20,13 +23,14 @@ class StudentsController < ApplicationController
   end
 
   # POST /students or /students.json
+  #Modified to add teacher's id
   def create
-    @student = Student.new(student_params)
+    @student = @teacher.students.build(student_params) 
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to student_url(@student), notice: "Student was successfully created." }
-        format.json { render :show, status: :created, location: @student }
+        format.html { redirect_to teacher_url(@teacher), notice: "Student was successfully created." }
+        format.json { render :show, status: :created, location: @teacher }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @student.errors, status: :unprocessable_entity }
@@ -67,4 +71,10 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:name, :gender, :grade, :attended, :teacher_id)
     end
+
+    # Created to find the teacher's id and pass it through the before_action event
+    def set_teacher
+      @teacher = Teacher.find(params[:teacher_id])
+    end
+
 end
