@@ -1,24 +1,15 @@
 # README
+This is a skeleton demo of a Teacher-student database created on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Students are associated with Teachers.
 
-Things you may want to cover:
+Watch demo for the project in action.
 
-* Ruby version
+A few screens:
 
-* System dependencies
+<img width="960" alt="2024-05-17 20_45_49-Schooldata" src="https://github.com/bhagyeshsp/schooldata/assets/165566941/bef5ca1a-bfa0-4d76-b948-e8045313cbf5">
 
-* Configuration
+<img width="960" alt="2024-05-17 20_46_17-Schooldata" src="https://github.com/bhagyeshsp/schooldata/assets/165566941/4f4cd297-bef7-4f4f-8511-fa19ccb1140a">
 
-* Database creation
+<img width="960" alt="2024-05-17 20_46_29-Schooldata" src="https://github.com/bhagyeshsp/schooldata/assets/165566941/3a0863ed-f80b-4496-a833-3ca549d25aef">
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
