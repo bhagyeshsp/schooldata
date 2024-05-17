@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Here we created nested routes to create students in context of the teacher
   resources :teachers do
-    resources :students, only: [:new, :create]
+    resources :students
   end
   # Other routes go here
   root "teachers#index"
