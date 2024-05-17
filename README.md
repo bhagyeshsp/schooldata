@@ -3,7 +3,7 @@ This is a skeleton demo of a Teacher-student database created on Rails.
 
 Students are associated with Teachers.
 
-Watch demo for the project in action.
+Find and watch demo for the project in action: schooldata/Demo.mp4
 
 A few screens:
 
