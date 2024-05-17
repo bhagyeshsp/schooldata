@@ -2,13 +2,26 @@
 
 <h1>Teachers Home</h1>
 
-<div id="teachers">
+
+<table>
+  <tr>
+  <th>Teacher's Name</th>
+  <th>Age</th>
+  <th>Visited</th>
+  <th>Actions</th>
+  </tr>
+  
+  <% # * The next ruby code encapsulates the <tr> </tr> content to repeat those rows for each student entries %>
   <% @teachers.each do |teacher| %>
-    <%= render teacher %>
-    <p>
-      <%= link_to "Show this teacher", teacher %>
-    </p>
+  <tr>
+  <td><%= teacher.name %></td>
+  <td><%= teacher.age %></td>
+  <td><%= teacher.visited %></td>
+  <td><%= link_to "Show this teacher", teacher %></td>
+  </tr>
   <% end %>
-</div>
+  </table>
+
+
 
 <%= link_to "New teacher", new_teacher_path %>

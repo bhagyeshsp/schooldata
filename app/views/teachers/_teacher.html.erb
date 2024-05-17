@@ -1,17 +1,19 @@
 <div id="<%= dom_id teacher %>">
-  <p>
-    <strong>Name:</strong>
-    <%= teacher.name %>
-  </p>
 
-  <p>
-    <strong>Age:</strong>
-    <%= teacher.age %>
-  </p>
+<table>
+  <tr>
+    <th>Teacher's Name</th>
+    <th>Age</th>
+    <th>Visited</th>
+  </tr>
+  
+  <tr>
+    <td><%= teacher.name %></td>
+    <td><%= teacher.age %></td>
+    <td><%= teacher.visited %></td>
+  </tr>
 
-  <p>
-    <strong>Visited:</strong>
-    <%= teacher.visited %>
-  </p>
+  </table>
 
-</div>
+
+

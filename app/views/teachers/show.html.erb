@@ -9,14 +9,34 @@
   <%= button_to "Destroy this teacher", @teacher, method: :delete %>
 </div>
 
-# Added new code for comparison
-</br> </br></br> </br>
-<h1><%= @teacher.name %></h1>
+</br></br></br>
+
+
+<h1>Teacher's Name: <%= @teacher.name %></h1>
+<h5> Teacher-associated student names go here: </h5>
 <p><%= link_to 'Add Student', new_teacher_student_path(@teacher) %></p>
 
-<h2>Students</h2>
-<ul>
+<h2>Added Students</h2>
+
+  
+  <table>
+  <tr>
+    <th>Student Name</th>
+    <th>Gender</th>
+    <th>Grade</th>
+    <th>Attended</th>
+    <th>Actions</th>
+  </tr>
+  
+  <%# * The next ruby code encapsulates the <tr> </tr> content to repeat those rows for each student entries  %>
   <% @teacher.students.each do |student| %>
-    <li><%= student.name %> - <%= student.grade %></li>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.gender %></td>
+    <td><%= student.grade %></td>
+    <td><%= student.attended %></td>
+    <td><%= link_to "Edit", edit_teacher_student_path(@teacher, student) %> </td>
+  </tr>
   <% end %>
-</ul>
+  </table>
+  
